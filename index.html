@@ -35,55 +35,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <!--Javascript code.-->
 <script>
-	var exampleVariable1 = 0;
-	var exampleVariable2 = 0;
-	var exampleVariable3 = 0;
-	
-	function exampleFunction1()
+	var score = 0;
+	var questionNum = 0;
+	const answers = ['B','D','A','C','B','A','D'];
+	function tally_score(answerChoice)
 	{
-		// Assigns values to existing variables based on user input. The parseFloat() function converts string values to numerical values.
-    		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 + exampleVariable2;
-		
-		alert("You just ran an addition function!");
-		console.log("Addition function was run.");
-	}
-	
-	function exampleFunction2()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 * exampleVariable2;
-		
-		alert("You just ran a multiplication function!");
-		console.log("Multiplication function was run.");
-	}
-	
-	function exampleFunction3()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 ** exampleVariable2;
-		
-		alert("You just ran an exponent function!");
-		console.log("Exponent function was run.");
+		if(answerChoice == answers[questionNumber]){
+			score = score + 1;
+		}
+		questionNumber = questionNumber + 1;
 	}
 	
 	function exampleResultsFunction()
 	{
-		document.getElementById("endResults").innerHTML = "Your final result is: " + exampleVariable3;
+		document.getElementById("endResults").innerHTML = "Your final score is: " + score;
 		resetVariables();
 	}
 	
 	function resetVariables()
 	{
-		exampleVariable1 = 0;
-		exampleVariable2 = 0;
-		exampleVariable3 = 0;
+		score = 0;
+		questionNumber = 0;
 	}
 </script>
   
@@ -140,7 +112,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <center>
     
     	<div id="content2" class="w3-container">
-        	<p>QUESTION 1 GOES HERE</p>    
+        	<p>This face is expressing...</p>   
+		br>
+    		<img id="question_img" src="https://imgur.com/P8AEmxN" width="30" alt="anger">
     	</div>
 	
 	<!--Form element. This allows for user input in HTML.-->
@@ -157,24 +131,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<br><br><br>
 	</form>
       
-  <a href="#finalpage" onclick="exampleFunction1();" class="w3-btn w3-grey">Button 1</a>
-  <a href="#finalpage" onclick="exampleFunction2();" class="w3-btn w3-grey">Button 2</a>
-  <a href="#finalpage" onclick="exampleFunction3();" class="w3-btn w3-grey">Button 3</a>
-    
+  <a href="#finalpage" onclick="tally_score('A');" class="w3-btn w3-grey">Pain</a>
+  <a href="#finalpage" onclick="tally_score('B');" class="w3-btn w3-grey">Anger</a>
+  <a href="#finalpage" onclick="tally_score('C');" class="w3-btn w3-grey">Surprise</a>
+  <a href="#finalpage" onclick="tally_score('D');" class="w3-btn w3-grey">Anxiety</a> 
   </center>
-</div>  
-  
-  
-  
-
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+</div>
 	  
 <!--LAST SUBPAGE-->
 <div id="finalpage" class="page">
