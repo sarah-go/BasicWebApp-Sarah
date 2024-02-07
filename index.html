@@ -38,10 +38,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var score = 0;
 	var questionNum = 0;
 	const answers = ['B','D','A','C','B','A','D'];
+	const answers_labels = ["anger","contempt","disgust","enjoyment","fear","sadness","surprise"];
 	function tally_score(answerChoice)
 	{
 		if(answerChoice == answers[questionNumber]){
 			score = score + 1;
+			alert("Correct!");
+		}
+		else {
+			alert("Oops, incorrect! The emotion being expressed was actually" + answer_labels[questionNumber] + " :O");
 		}
 		questionNumber = questionNumber + 1;
 	}
