@@ -101,12 +101,35 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	  <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the Maker Space Stream, FRI, and The University of Texas system are not liable for anything related to this code. THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION!</p>
   
-  
-  
 <!--FIRST SUBPAGE-->
-<div id="one" class="page">
+<div id="getname" class="page">
 	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+		<h1>Emotional Intelligence Test</h1>
+	</div>
+	
+  <center>
+    
+    	<div id="content2" class="w3-container">
+        	<p>Please enter your name so your score can be announced in a personalized fashion :)</p>   
+    	</div>
+	  
+	<!--Form element. This allows for user input in HTML.-->
+	<form>
+		<!--Label for first input field.-->
+		<label for="firstInputBox">Anything goes:</label><br>
+		<!--User input box.-->
+		<input type="number" id="firstInputBox" value="0"><br>
+		<br><br><br>
+	</form>
+      
+  <a href="#question0" onclick="tally_score('A');" class="w3-btn w3-grey">Pain</a>
+  </center>
+</div>  
+  
+<!--SECOND SUBPAGE-->
+<div id="question0" class="page">
+	<div id="header2" class="w3-container w3-flat-carrot">
+		<h1>Emotional Intelligence Test - Q0</h1>
 	</div>
 	
   <center>
@@ -116,20 +139,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		br>
     		<img id="question_img" src="https://imgur.com/P8AEmxN" width="30" alt="anger">
     	</div>
-	
-	<!--Form element. This allows for user input in HTML.-->
-	<form>
-		<!--Label for first input field.-->
-		<label for="firstInputBox">Enter a number:</label><br>
-		<!--User input box.-->
-		<input type="number" id="firstInputBox" value="0"><br>
-		<!--Label for second input field.-->
-		<label for="secondInputBox">Enter another number:</label><br>
-		<!--User input box.-->
-		<input type="number" id="secondInputBox" value="0">
-		
-		<br><br><br>
-	</form>
       
   <a href="#finalpage" onclick="tally_score('A');" class="w3-btn w3-grey">Pain</a>
   <a href="#finalpage" onclick="tally_score('B');" class="w3-btn w3-grey">Anger</a>
