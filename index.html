@@ -9,14 +9,14 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
 Authors in chronological order of contribution:
   Tim Riedel
   Niam Kuttanna
-  [...]
+  Sarah Go
 
 Further Information:
   http://cns.utexas.edu/fri
 
-Brief summary of this code: [...]
+Brief summary of this code: Facial expression test
 
-Known issues: [...]
+Known issues: N/A
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -24,47 +24,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
   <!--Formatting source information and webpage title.-->
   <head>
-    <title>APP NAME GOES HERE</title>
+    <title>Facial Expression Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="w3-colors-flat.css">
   </head>
-
-  
-
-<!--Javascript code.-->
-<script>
-	var score = 0;
-	var questionNum = 0;
-	const answers = ['B','D','A','C','B','A','D'];
-	const answers_labels = ["anger","contempt","disgust","enjoyment","fear","sadness","surprise"];
-	function tally_score(answerChoice)
-	{
-		if(answerChoice == answers[questionNumber]){
-			score = score + 1;
-			alert("Correct!");
-		}
-		else {
-			alert("Oops, incorrect! The emotion being expressed was actually" + answer_labels[questionNumber] + " :O");
-		}
-		questionNumber = questionNumber + 1;
-	}
-	
-	function exampleResultsFunction()
-	{
-		document.getElementById("endResults").innerHTML = "Your final score is: " + score;
-		resetVariables();
-	}
-	
-	function resetVariables()
-	{
-		score = 0;
-		questionNumber = 0;
-	}
-</script>
-  
-  
  
 <!--CSS webpage style/format settings.-->
 <style>	
@@ -80,12 +45,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0,0%,100%);
+    background-color: hsl(101, 51%, 90%);
 }
 
 .page:target {
     left: 0vw;
     z-index: 1;
+}
+
+.headshot {
+	width: 200px;
+    height: auto;
 }
 </style>
 
@@ -94,9 +64,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!--Main HTML body section.-->
 <body>
   <!--Landing page content.-->
-  <div id="content" class="w3-container">
+  <div id="content" class="page w3-container">
   	<!--Header!-->
-	<div id="header" class="w3-container w3-flat-carrot">
+	<div id="header" class="w3-container w3-flat-turquoise">
 		<h1>Facial Expression Test</h1>
 	</div>
 	
@@ -106,15 +76,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	  <p>Facial expressions are a universal way of expressing emotion. How well can you read facial expressions? Test out your EQ skills with this quick quiz.</p>
   
-<!--FIRST SUBPAGE-->
+<!--Get Name-->
 <div id="getname" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
+	<div id="nameheader" class="w3-container w3-flat-turquoise">
 		<h1>Facial Expression Test</h1>
 	</div>
 	
   <center>
     
-    	<div id="content2" class="w3-container">
+    	<div id="namecontent" class="w3-container">
         	<p>Please enter your name so your score can be announced in a personalized fashion :)</p>   
     	</div>
 	  
@@ -123,7 +93,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<!--Label for first input field.-->
 		<label for="firstInputBox">Anything goes:</label><br>
 		<!--User input box.-->
-		<input type="text" id="user_name" value=""><br>
+		<input type="text" id="userName" value=""><br>
 		<br><br><br>
 	</form>
       
@@ -131,41 +101,133 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </center>
 </div>  
   
-<!--SECOND SUBPAGE-->
+<!--Question 0-->
 <div id="question0" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
+	<div id="header0" class="w3-container w3-flat-turquoise">
 		<h1>Facial Expression Test - Q0</h1>
 	</div>
-	
   <center>
-    
-    	<div id="content2" class="w3-container">
-        	<p>This face is expressing...</p>  
-    	</div>
-	
-  <a href="#finalpage" onclick="tally_score('A');" class="w3-btn w3-grey">Pain</a>
-  <a href="#finalpage" onclick="tally_score('B');" class="w3-btn w3-grey">Anger</a>
-  <a href="#finalpage" onclick="tally_score('C');" class="w3-btn w3-grey">Surprise</a>
-  <a href="#finalpage" onclick="tally_score('D');" class="w3-btn w3-grey">Anxiety</a> 
+	<div id="content0" class="w3-container">
+		<p>This face is expressing...</p>  
+	</div>
+	<img src="./images/anger.png" alt="anger" class="headshot"/>
+	<br><br><br>
+  	<a href="#question1" onclick="tally_score('A');" class="w3-btn w3-grey">Pain</a>
+  	<a href="#question1" onclick="tally_score('B');" class="w3-btn w3-grey">Anger</a>
+  	<a href="#question1" onclick="tally_score('C');" class="w3-btn w3-grey">Surprise</a>
+  	<a href="#question1" onclick="tally_score('D');" class="w3-btn w3-grey">Anxiety</a> 
   </center>
 </div>
-	  
+
+<!--Question 1-->
+<div id="question1" class="page">
+	<div id="header1" class="w3-container w3-flat-turquoise">
+		<h1>Facial Expression Test - Q1</h1>
+	</div>
+  <center>
+	<div id="content1" class="w3-container">
+		<p>This face is expressing...</p>  
+	</div>
+	<img src="./images/contempt.png" alt="contempt" class="headshot"/>
+	<br><br><br>
+  	<a href="#question2" onclick="tally_score('A');" class="w3-btn w3-grey">Pride</a>
+  	<a href="#question2" onclick="tally_score('B');" class="w3-btn w3-grey">Uncertainty</a>
+  	<a href="#question2" onclick="tally_score('C');" class="w3-btn w3-grey">Embarrassment</a>
+  	<a href="#question2" onclick="tally_score('D');" class="w3-btn w3-grey">Contempt</a> 
+  </center>
+</div>
+
+<!--Question 2-->
+<div id="question2" class="page">
+	<div id="header2" class="w3-container w3-flat-turquoise">
+		<h1>Facial Expression Test - Q2</h1>
+	</div>
+  <center>
+	<div id="content2" class="w3-container">
+		<p>This face is expressing...</p>  
+	</div>
+	<img src="./images/disgust.png" alt="disgust" class="headshot"/>
+	<br><br><br>
+  	<a href="#question3" onclick="tally_score('A');" class="w3-btn w3-grey">Disgust</a>
+  	<a href="#question3" onclick="tally_score('B');" class="w3-btn w3-grey">Pain</a>
+  	<a href="#question3" onclick="tally_score('C');" class="w3-btn w3-grey">Anger</a>
+  	<a href="#question3" onclick="tally_score('D');" class="w3-btn w3-grey">Fear</a> 
+  </center>
+</div>
+
+<!--Question 3-->
+<div id="question3" class="page">
+	<div id="header3" class="w3-container w3-flat-turquoise">
+		<h1>Facial Expression Test - Q3</h1>
+	</div>
+  <center>
+	<div id="content3" class="w3-container">
+		<p>This face is expressing...</p>  
+	</div>
+	<img src="./images/enjoyment.png" alt="enjoyment" class="headshot"/>
+	<br><br><br>
+  	<a href="#question4" onclick="tally_score('A');" class="w3-btn w3-grey">Love</a>
+  	<a href="#question4" onclick="tally_score('B');" class="w3-btn w3-grey">Flirtatiousness</a>
+  	<a href="#question4" onclick="tally_score('C');" class="w3-btn w3-grey">Enjoyment</a>
+  	<a href="#question4" onclick="tally_score('D');" class="w3-btn w3-grey">Desire</a> 
+  </center>
+</div>
+
+<!--Question 4-->
+<div id="question4" class="page">
+	<div id="header4" class="w3-container w3-flat-turquoise">
+		<h1>Facial Expression Test - Q4</h1>
+	</div>
+  <center>
+	<div id="content4" class="w3-container">
+		<p>This face is expressing...</p>  
+	</div>
+	<img src="./images/fear.png" alt="fear" class="headshot"/>
+	<br><br><br>
+  	<a href="#question5" onclick="tally_score('A');" class="w3-btn w3-grey">Shame</a>
+  	<a href="#question5" onclick="tally_score('B');" class="w3-btn w3-grey">Fear</a>
+  	<a href="#question5" onclick="tally_score('C');" class="w3-btn w3-grey">Surprise</a>
+  	<a href="#question5" onclick="tally_score('D');" class="w3-btn w3-grey">Disgust</a> 
+  </center>
+</div>
+
+<!--Question 5-->
+<div id="question5" class="page">
+	<div id="header5" class="w3-container w3-flat-turquoise">
+		<h1>Facial Expression Test - Q5</h1>
+	</div>
+  <center>
+	<div id="content5" class="w3-container">
+		<p>This face is expressing...</p>  
+	</div>
+	<img src="./images/sadness.png" alt="sadness" class="headshot"/>
+	<br><br><br>
+  	<a href="#finalpage" onclick="tally_score('A');" class="w3-btn w3-grey">Contempt</a>
+  	<a href="#finalpage" onclick="tally_score('B');" class="w3-btn w3-grey">Pain</a>
+  	<a href="#finalpage" onclick="tally_score('C');" class="w3-btn w3-grey">Shame</a>
+  	<a href="#finalpage" onclick="tally_score('D');" class="w3-btn w3-grey">Sadness</a> 
+  </center>
+</div>
+
 <!--LAST SUBPAGE-->
 <div id="finalpage" class="page">
-	<div id="finalheader" class="w3-container w3-flat-carrot">
+	<div id="finalheader" class="w3-container w3-flat-turquoise">
 		<h1>Test Results</h1>
 	</div>
 	
   <center>
     
 	  <div id="finalcontent" class="w3-container">
-		  <p id="endResults">FINAL PAGE CONTENT GOES HERE</p>
+		  <p id="endResults">Click the button below to reveal your final percent accuracy.</p>
 	  </div>
-  
-  <a class="w3-btn w3-black" onclick="exampleResultsFunction();">Click me!
+	  <br>
+	  <div id="gifImage"></div>
+	  
+  <a class="w3-btn w3-black" onclick="computeScore();">Click here to reveal score!
     <br>
     <img id="resultsButtonImg" src="https://i.imgur.com/rZOaHhx.png" width="30" alt="spongebob">
   </a>
+  <br><br>
   <a href="#content" onclick="resetVariables();" class="w3-btn w3-black">Return to Home Page</a>
     
   </center>
@@ -174,10 +236,50 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   
   
 <!--Footer!-->
-<footer class="w3-bottom w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-turquoise">
 	<p>All images courtesy https://www.paulekman.com/universal-emotions/</p>
 </footer>
 </div>
 
+<!--Javascript code.-->
+<script>
+	var score = 0;
+	var questionNumber = 0; 
+	var pressedButtonOnce = 0;
+	const answers = ['B','D','A','C','B','D'];
+	const answerLabels = ["anger","contempt","disgust","enjoyment","fear","sadness"];
+
+	function tally_score(answerChoice) 
+	{
+		if (answerChoice == answers[questionNumber]) {
+			score = score + 1;
+			alert("Correct!");
+		} else {
+			var alertstr = "Oops, incorrect! The emotion being expressed was actually " + answerLabels[questionNumber] + " :O";
+        	alert(alertstr);
+		}
+		questionNumber = questionNumber + 1;
+	}
+	
+	function computeScore()
+	{
+		if(!pressedButtonOnce){
+			pressedButtonOnce = 1;
+			var name = document.getElementById("userName").value;
+			score = ((score/6)*100).toFixed(2);
+			document.getElementById("endResults").innerHTML = "Drumroll please..." + name + ", your final percent accuracy is: " + score + "% !!!";
+		}
+	}
+	
+	function resetVariables()
+	{
+		document.getElementById("endResults").innerHTML = "Click the button below to reveal your final percent accuracy.";
+		score = 0;
+		questionNumber = 0;
+		pressedButtonOnce = 0;
+	}
+</script>
+
 </body>
 </html>
+
